@@ -19,11 +19,11 @@
         <li>Telephone: <span th:utext="${orderInfo.customerPhone}"></span></li>
         <li>Adresse: <span th:utext="${orderInfo.customerAddress}"></span></li>
     </ul>
-    <h3>Order Summary:</h3>
+    <h3>Details de commande:</h3>
     <ul>
         <li>Total:
             <span class="total" th:utext="${#numbers.formatDecimal(orderInfo.amount,3,2,'COMMA')}">
-               </span>
+               </span> €
         </li>
     </ul>
 </div>
