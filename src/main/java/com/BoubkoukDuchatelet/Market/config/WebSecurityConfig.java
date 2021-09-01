@@ -41,7 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .access("hasAnyRole('ROLE_EMPLOYEE', 'ROLE_MANAGER')");
 
         //acess client
-        http.authorizeRequests().antMatchers("/admin/accountInfo", "/admin/shoppingCartConfirmation", "/admin/shoppingCartCustomer", "/admin/shoppingCartFinalize")//
+        http.authorizeRequests().antMatchers("/admin/accountInfo", "/shoppingCartConfirmation", "/shoppingCartCustomer", "/shoppingCartFinalize")//
                 .access("hasAnyRole('ROLE_EMPLOYEE', 'ROLE_MANAGER', 'ROLE_CLIENT')");
 
         // Pages only for MANAGER
