@@ -30,25 +30,25 @@
                            th:name="|cartLines[${varStatus.index}].productInfo.code|"
                            th:value="${cartLineInfo.productInfo.code}" />
                 </li>
-                <li>Name: <span th:utext="${cartLineInfo.productInfo.name}"></span></li>
-                <li>Price:
+                <li>Nom: <span th:utext="${cartLineInfo.productInfo.name}"></span></li>
+                <li>Prix:
                     <span class="price"
-                          th:utext="${#numbers.formatDecimal(cartLineInfo.productInfo.price,3,2,'COMMA')}">
-                        </span>
+                          th:utext="${#numbers.formatDecimal(cartLineInfo.productInfo.price,2,2,'COMMA')}">
+                        </span> €
                 </li>
-                <li>Quantity:
+                <li>Quantité:
                     <input
                             th:name="|cartLines[${varStatus.index}].quantity|"
                             th:value="${cartLineInfo.quantity}" />
                 </li>
-                <li>Subtotal:
-                    <span class="sous-total"
+                <li>Sous-total:
+                    <span class="subtotal"
                           th:utext="${#numbers.formatDecimal(cartLineInfo.amount,2,2,'COMMA')}">
-                        </span>
+                        </span> €
                 </li>
                 <li>
                     <a th:href="@{|/shoppingCartRemoveProduct?code=${cartLineInfo.productInfo.code}|}">
-                        Delete
+                        Supprimer
                     </a>
                 </li>
             </ul>
