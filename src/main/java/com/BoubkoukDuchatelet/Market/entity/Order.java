@@ -27,6 +27,9 @@ public class Order implements Serializable {
     @Column(name = "Amount", nullable = false)
     private double amount;
 
+    @Column(name = "Amountevat", nullable = false)
+    private double amountevat;
+
     @Column(name = "Customer_Name", length = 255, nullable = false)
     private String customerName;
 
@@ -69,6 +72,12 @@ public class Order implements Serializable {
 
     public void setAmount(double amount) {
         this.amount = amount;
+    }
+
+    public double getAmountEvat() { return amountevat; }
+
+    public void setAmountEvat(double amountevat) {
+        this.amountevat = amountevat;
     }
 
     public String getCustomerName() {

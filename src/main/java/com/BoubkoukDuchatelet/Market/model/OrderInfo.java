@@ -9,6 +9,7 @@ public class OrderInfo {
     private Date orderDate;
     private int orderNum;
     private double amount;
+    private double amountevat;
 
     private String customerName;
     private String customerAddress;
@@ -23,12 +24,13 @@ public class OrderInfo {
 
     // Using for Hibernate Query.
     public OrderInfo(String id, Date orderDate, int orderNum, //
-                     double amount, String customerName, String customerAddress, //
+                     double amount,double amountevat, String customerName, String customerAddress, //
                      String customerEmail, String customerPhone) {
         this.id = id;
         this.orderDate = orderDate;
         this.orderNum = orderNum;
         this.amount = amount;
+        this.amountevat = amountevat;
 
         this.customerName = customerName;
         this.customerAddress = customerAddress;
@@ -108,4 +110,11 @@ public class OrderInfo {
         this.details = details;
     }
 
+    public double getAmountevat() {
+        return amountevat;
+    }
+
+    public void setAmountevat(double amountevat) {
+        this.amountevat = amountevat;
+    }
 }

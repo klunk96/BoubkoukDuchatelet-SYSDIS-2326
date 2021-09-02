@@ -6,6 +6,8 @@ public class ProductInfo {
     private String code;
     private String name;
     private double price;
+    private double priceEvat;
+    private int vat;
 
     public ProductInfo() {
     }
@@ -14,6 +16,8 @@ public class ProductInfo {
         this.code = product.getCode();
         this.name = product.getName();
         this.price = product.getPrice();
+        this.vat = product.getVat();
+        this.priceEvat = (this.getPrice() / ((this.getVat()/100)+1.00));
     }
 
     // Using in JPA/Hibernate query
@@ -21,6 +25,14 @@ public class ProductInfo {
         this.code = code;
         this.name = name;
         this.price = price;
+    }
+
+    public ProductInfo(String code, String name, double price, int vat) {
+        this.code = code;
+        this.name = name;
+        this.price = price;
+        this.vat = vat;
+        this.priceEvat = (this.getPrice() / ((this.getVat()/100)+1.00));
     }
 
     public String getCode() {
@@ -47,4 +59,15 @@ public class ProductInfo {
         this.price = price;
     }
 
+    public int getVat() { return vat; }
+
+    public void setVat(int vat) { this.vat = vat; }
+
+    public double getPriceEvat() {
+        return priceEvat;
+    }
+
+    public void setPriceEvat(double priceEvat) {
+        this.priceEvat = priceEvat;
+    }
 }

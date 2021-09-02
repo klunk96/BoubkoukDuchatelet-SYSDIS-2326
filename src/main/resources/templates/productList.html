@@ -18,6 +18,7 @@
                  th:src="@{|/productImage?code=${prodInfo.code}|}" /></li>
         <th:block sec:authorize="hasAuthority('ROLE_MANAGER')">
         <li>Code: <span th:utext="${prodInfo.code}"></span></li>
+        <li>TVA: <span th:utext="${prodInfo.vat}"></span></li>
         </th:block>
         <li>Nom: <span th:utext="${prodInfo.name}"></span></li>
         <li>Prix(€): <span th:utext="${#numbers.formatDecimal(prodInfo.price,2,2,'COMMA')}"></span> € </li>

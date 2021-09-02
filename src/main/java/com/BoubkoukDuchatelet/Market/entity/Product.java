@@ -25,6 +25,9 @@ public class Product implements Serializable {
     @Column(name = "Price", nullable = false)
     private double price;
 
+    @Column(name = "Vat", nullable = false)
+    private int vat;
+
     @Lob
     @Column(name = "Image", length = Integer.MAX_VALUE, nullable = true)
     private byte[] image;
@@ -74,6 +77,12 @@ public class Product implements Serializable {
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    public int getVat() { return vat; }
+
+    public void setVat(int vat) {
+        this.vat = vat;
     }
 
 }

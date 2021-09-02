@@ -17,9 +17,7 @@ public class CartLineInfo {
         this.productInfo = productInfo;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
+    public int getQuantity() { return quantity; }
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
@@ -29,4 +27,5 @@ public class CartLineInfo {
         return this.productInfo.getPrice() * this.quantity;
     }
 
+    public double getAmountEvat() { return (this.productInfo.getPriceEvat());}
 }

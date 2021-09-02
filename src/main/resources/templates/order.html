@@ -34,13 +34,15 @@
         <th>Nom</th>
         <th>Quantité</th>
         <th>Prix (€)</th>
-        <th>Quantité</th>
+        <th>Total HTVA (€)</th>
+        <th>Total (€)</th>
     </tr>
     <tr th:each="orderDetailInfo : ${orderInfo.details}">
         <td th:utext="${orderDetailInfo.productCode}"></td>
         <td th:utext="${orderDetailInfo.productName}"></td>
         <td th:utext="${orderDetailInfo.quanity}"></td>
         <td th:utext="${#numbers.formatDecimal(orderDetailInfo.price,3,2,'COMMA')}"></td>
+        <td th:utext="${#numbers.formatDecimal(orderDetailInfo.amountevat,3,2,'COMMA')}"></td>
         <td th:utext="${#numbers.formatDecimal(orderDetailInfo.amount,3,2,'COMMA')}"></td>
     </tr>
 </table>

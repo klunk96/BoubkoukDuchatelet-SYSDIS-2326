@@ -40,6 +40,9 @@ public class OrderDetail implements Serializable {
     @Column(name = "Amount", nullable = false)
     private double amount;
 
+    @Column(name = "Amountevat", nullable = false)
+    private double amountevat;
+
     public String getId() {
         return id;
     }
@@ -80,12 +83,15 @@ public class OrderDetail implements Serializable {
         this.price = price;
     }
 
-    public double getAmount() {
-        return amount;
-    }
+    public double getAmount() { return amount; }
 
     public void setAmount(double amount) {
         this.amount = amount;
     }
 
+    public double getAmountEvat() { return amountevat; }
+
+    public void setAmountEvat(double amountevat) {
+        this.amountevat = amountevat;
+    }
 }

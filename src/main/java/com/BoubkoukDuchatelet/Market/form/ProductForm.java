@@ -7,6 +7,8 @@ public class ProductForm {
     private String code;
     private String name;
     private double price;
+    private double priceEvat;
+    private int vat;
 
     private boolean newProduct = false;
 
@@ -21,6 +23,8 @@ public class ProductForm {
         this.code = product.getCode();
         this.name = product.getName();
         this.price = product.getPrice();
+        this.vat = product.getVat();
+        this.priceEvat = (this.getPrice() / ((this.getVat()/100)+1.00));
     }
 
     public String getCode() {
@@ -47,6 +51,14 @@ public class ProductForm {
         this.price = price;
     }
 
+    public double getPriceEvat() {
+        return priceEvat;
+    }
+
+    public void setPriceEvat(double priceEvat) {
+        this.priceEvat = priceEvat;
+    }
+
     public MultipartFile getFileData() {
         return fileData;
     }
@@ -62,5 +74,9 @@ public class ProductForm {
     public void setNewProduct(boolean newProduct) {
         this.newProduct = newProduct;
     }
+
+    public int getVat() { return vat; }
+
+    public void setVat(int vat) { this.vat = vat; }
 
 }

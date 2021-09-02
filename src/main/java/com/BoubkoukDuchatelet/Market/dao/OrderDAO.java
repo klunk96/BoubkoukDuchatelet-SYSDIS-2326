@@ -51,6 +51,7 @@ public class OrderDAO {
         order.setOrderNum(orderNum);
         order.setOrderDate(new Date());
         order.setAmount(cartInfo.getAmountTotal());
+        order.setAmountEvat(cartInfo.getAmountevatTotal());
 
         CustomerInfo customerInfo = cartInfo.getCustomerInfo();
         order.setCustomerName(customerInfo.getName());
@@ -67,6 +68,7 @@ public class OrderDAO {
             detail.setId(UUID.randomUUID().toString());
             detail.setOrder(order);
             detail.setAmount(line.getAmount());
+            detail.setAmountEvat(line.getAmountEvat());
             detail.setPrice(line.getProductInfo().getPrice());
             detail.setQuanity(line.getQuantity());
 
@@ -86,7 +88,7 @@ public class OrderDAO {
     // @page = 1, 2, ...
     public PaginationResult<OrderInfo> listOrderInfo(int page, int maxResult, int maxNavigationPage) {
         String sql = "Select new " + OrderInfo.class.getName()//
-                + "(ord.id, ord.orderDate, ord.orderNum, ord.amount, "
+                + "(ord.id, ord.orderDate, ord.orderNum, ord.amount, ord.amountevat, "
                 + " ord.customerName, ord.customerAddress, ord.customerEmail, ord.customerPhone) " + " from "
                 + Order.class.getName() + " ord "//
                 + " order by ord.orderNum desc";
@@ -107,13 +109,13 @@ public class OrderDAO {
             return null;
         }
         return new OrderInfo(order.getId(), order.getOrderDate(), //
-                order.getOrderNum(), order.getAmount(), order.getCustomerName(), //
+                order.getOrderNum(), order.getAmount(), order.getAmountEvat(), order.getCustomerName(), //
                 order.getCustomerAddress(), order.getCustomerEmail(), order.getCustomerPhone());
     }
 
     public List<OrderDetailInfo> listOrderDetailInfos(String orderId) {
         String sql = "Select new " + OrderDetailInfo.class.getName() //
-                + "(d.id, d.product.code, d.product.name , d.quanity,d.price,d.amount) "//
+                + "(d.id, d.product.code, d.product.name , d.quanity,d.price,d.amount, d.amountevat) "//
                 + " from " + OrderDetail.class.getName() + " d "//
                 + " where d.order.id = :orderId ";
 

@@ -108,6 +108,14 @@ public class CartInfo {
         return total;
     }
 
+    public double getAmountevatTotal() {
+        double total = 0;
+        for (CartLineInfo line : this.cartLines) {
+            total += line.getAmountEvat();
+        }
+        return total;
+    }
+
     public void updateQuantity(CartInfo cartForm) {
         if (cartForm != null) {
             List<CartLineInfo> lines = cartForm.getCartLines();
