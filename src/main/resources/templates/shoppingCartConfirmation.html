@@ -53,6 +53,13 @@
                       th:utext="${#numbers.formatDecimal(cartLineInfo.productInfo.price,2,2,'COMMA')}">
                   </span> €
             </li>
+            <th:block sec:authorize="hasAuthority('ROLE_MANAGER')">
+                <li>Sous-total-htva:
+                    <span class="subtotal"
+                          th:utext="${#numbers.formatDecimal(cartLineInfo.evat,2,2,'COMMA')}">
+                        </span> €
+                </li>
+            </th:block>
             <li>Quantité: <span th:utext="${cartLineInfo.quantity}"></span></li>
             <li>Sous-total:
                 <span class="subtotal"

@@ -67,7 +67,7 @@ public class OrderDAO {
             detail.setId(UUID.randomUUID().toString());
             detail.setOrder(order);
             detail.setAmount(line.getAmount());
-            detail.setAmountEvat(line.getAmountEvat());
+            detail.setAmountEvat(line.getEvat());
             detail.setPrice(line.getProductInfo().getPrice());
             detail.setQuanity(line.getQuantity());
 

@@ -27,5 +27,5 @@ public class CartLineInfo {
         return this.productInfo.getPrice() * this.quantity;
     }
 
-    public double getAmountEvat() { return (this.productInfo.getPriceEvat());}
+    public double getEvat() { return this.productInfo.getEvatPrice() * this.quantity;}
 }
