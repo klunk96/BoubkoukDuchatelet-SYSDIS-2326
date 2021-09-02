@@ -51,6 +51,7 @@ public class OrderDAO {
         order.setOrderDate(new Date());
         order.setAmount(cartInfo.getAmountTotal());
         order.setEt(cartInfo.getEtTotal());
+        order.setDelivery(cartInfo.isDelivery());
 
         CustomerInfo customerInfo = cartInfo.getCustomerInfo();
         order.setCustomerName(customerInfo.getName());
@@ -87,7 +88,7 @@ public class OrderDAO {
     // @page = 1, 2, ...
     public PaginationResult<OrderInfo> listOrderInfo(int page, int maxResult, int maxNavigationPage) {
         String sql = "Select new " + OrderInfo.class.getName()//
-                + "(ord.id, ord.orderDate, ord.orderNum, ord.amount, ord.et, "
+                + "(ord.id, ord.orderDate, ord.orderNum, ord.amount, ord.et, ord.delivery"
                 + " ord.customerName, ord.customerAddress, ord.customerEmail, ord.customerPhone) " + " from "
                 + Order.class.getName() + " ord "//
                 + " order by ord.orderNum desc";
@@ -108,13 +109,13 @@ public class OrderDAO {
             return null;
         }
         return new OrderInfo(order.getId(), order.getOrderDate(), //
-                order.getOrderNum(), order.getAmount(), order.getEt(), order.getCustomerName(), //
+                order.getOrderNum(), order.getAmount(), order.getEt(), order.isDelivery(), order.getCustomerName(), //
                 order.getCustomerAddress(), order.getCustomerEmail(), order.getCustomerPhone());
     }
 
     public List<OrderDetailInfo> listOrderDetailInfos(String orderId) {
         String sql = "Select new " + OrderDetailInfo.class.getName() //
-                + "(d.id, d.product.code, d.product.name , d.quanity,d.price,d.amount, d.et) "//
+                + "(d.id, d.product.code, d.product.name , d.quanity,d.price,d.amount, d.amountevat, d.delivery) "//
                 + " from " + OrderDetail.class.getName() + " d "//
                 + " where d.order.id = :orderId ";
 

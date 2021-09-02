@@ -138,6 +138,7 @@ public class MainController {
 
         CartInfo cartInfo = Utils.getCartInSession(request);
         cartInfo.updateQuantity(cartForm);
+        cartInfo.updateDelivery(cartForm);
 
         return "redirect:/shoppingCart";
     }

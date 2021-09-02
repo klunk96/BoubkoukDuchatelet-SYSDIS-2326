@@ -30,6 +30,9 @@ public class Order implements Serializable {
     @Column(name = "Amountevat", nullable = false)
     private double et;
 
+    @Column (name = "Delivery", nullable = false)
+    private boolean delivery;
+
     @Column(name = "Customer_Name", length = 255, nullable = false)
     private String customerName;
 
@@ -112,4 +115,11 @@ public class Order implements Serializable {
         this.customerPhone = customerPhone;
     }
 
+    public boolean isDelivery() {
+        return delivery;
+    }
+
+    public void setDelivery(boolean delivery) {
+        this.delivery = delivery;
+    }
 }

@@ -10,6 +10,7 @@ public class OrderInfo {
     private int orderNum;
     private double amount;
     private double et;
+    private boolean delivery;
 
     private String customerName;
     private String customerAddress;
@@ -24,13 +25,14 @@ public class OrderInfo {
 
     // Using for Hibernate Query.
     public OrderInfo(String id, Date orderDate, int orderNum, //
-                     double amount,double et, String customerName, String customerAddress, //
+                     double amount,double et, boolean delivery, String customerName, String customerAddress, //
                      String customerEmail, String customerPhone) {
         this.id = id;
         this.orderDate = orderDate;
         this.orderNum = orderNum;
         this.amount = amount;
         this.et = et;
+        this.delivery = delivery;
 
         this.customerName = customerName;
         this.customerAddress = customerAddress;
@@ -116,5 +118,13 @@ public class OrderInfo {
 
     public double getEt() {
         return et;
+    }
+
+    public void setDelivery(boolean delivery) {
+        this.delivery = delivery;
+    }
+
+    public boolean isDelivery() {
+        return delivery;
     }
 }
