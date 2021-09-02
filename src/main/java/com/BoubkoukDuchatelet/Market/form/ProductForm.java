@@ -24,12 +24,10 @@ public class ProductForm {
         this.name = product.getName();
         this.price = product.getPrice();
         this.vat = product.getVat();
-        this.priceEvat = (this.getPrice() / ((this.getVat()/100)+1.00));
+        this.priceEvat = this.getPrice() / ((this.getVat()/100)+1.00);
     }
 
-    public String getCode() {
-        return code;
-    }
+    public String getCode() { return code; }
 
     public void setCode(String code) {
         this.code = code;

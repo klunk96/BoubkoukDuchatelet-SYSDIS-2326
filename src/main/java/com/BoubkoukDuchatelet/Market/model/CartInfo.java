@@ -111,7 +111,7 @@ public class CartInfo {
     public double getAmountevatTotal() {
         double total = 0;
         for (CartLineInfo line : this.cartLines) {
-            total += line.getAmountEvat();
+            total += line.getEvat();
         }
         return total;
     }

@@ -65,7 +65,7 @@ public class ProductDAO {
         product.setCode(code);
         product.setName(productForm.getName());
         product.setPrice(productForm.getPrice());
-        product.setVat(product.getVat());
+        product.setVat(productForm.getVat());
 
         if (productForm.getFileData() != null) {
             byte[] image = null;

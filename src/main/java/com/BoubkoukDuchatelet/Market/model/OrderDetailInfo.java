@@ -9,7 +9,7 @@ public class OrderDetailInfo {
     private int quanity;
     private double price;
     private double amount;
-    private double amountevat;
+    private double evat;
 
     public OrderDetailInfo() {
 
@@ -74,11 +74,11 @@ public class OrderDetailInfo {
         this.amount = amount;
     }
 
-    public double getAmountevat() {
-        return amountevat;
+    public double getEvat() {
+        return evat;
     }
 
-    public void setAmountevat(double amountevat) {
-        this.amountevat = amountevat;
+    public void setEvat(double evat) {
+        this.evat = evat;
     }
 }
