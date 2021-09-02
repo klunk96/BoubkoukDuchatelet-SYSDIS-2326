@@ -46,7 +46,6 @@ public class OrderDAO {
 
         int orderNum = this.getMaxOrderNum() + 1;
         Order order = new Order();
-
         order.setId(UUID.randomUUID().toString());
         order.setOrderNum(orderNum);
         order.setOrderDate(new Date());
