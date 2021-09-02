@@ -114,7 +114,7 @@ public class OrderDAO {
 
     public List<OrderDetailInfo> listOrderDetailInfos(String orderId) {
         String sql = "Select new " + OrderDetailInfo.class.getName() //
-                + "(d.id, d.product.code, d.product.name , d.quanity,d.price,d.amount, d.amountevat) "//
+                + "(d.id, d.product.code, d.product.name , d.quanity,d.price,d.amount, d.et) "//
                 + " from " + OrderDetail.class.getName() + " d "//
                 + " where d.order.id = :orderId ";
 
