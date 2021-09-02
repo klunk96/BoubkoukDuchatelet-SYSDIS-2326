@@ -15,7 +15,6 @@
     <h2>Il n'ya rien dans votre panier</h2>
     <a th:href="@{/productList}">Afficher la liste des produits </a>
 </th:block>
-
 <th:block th:if="${cartForm != null && cartForm.cartLines != null && !cartForm.cartLines.empty}">
     <form method="POST" th:object="${cartForm}" th:action="@{/shoppingCart}">
 
@@ -43,7 +42,7 @@
                 </li>
                 <li>Sous-total:
                     <span class="subtotal"
-                          th:utext="${#numbers.formatDecimal(cartLineInfo.amount,2,2,'COMMA')}">
+                          th:utext="${#numbers.formatDecimal(cartLineInfo.amount,3,2,'COMMA')}">
                         </span> €
                 </li>
                 <li>
@@ -53,9 +52,12 @@
                 </li>
             </ul>
         </div>
-
         <div style="clear: both"></div>
-        <input class="button-update-sc" type="submit" value="mettre a jour la quantité" />
+        <li>Livraison Express:
+            <input type="checkbox" name="Livraison" />
+        </li>
+        <input class="button-update-sc" type="submit" value="mettre a jour" />
+        </form>
         <a class="navi-item"
            th:href="@{/shoppingCartConfirmation}">Passer au payement</a>
         <a class="navi-item"
