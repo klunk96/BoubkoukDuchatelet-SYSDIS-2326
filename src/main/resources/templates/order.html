@@ -22,7 +22,7 @@
     <h3>Details de commande:</h3>
     <ul>
         <li>Total TVA:
-            <span class="total" th:utext="${#numbers.formatDecimal(orderInfo.evat,3,2,'COMMA')}">
+            <span class="total" th:utext="${#numbers.formatDecimal(orderInfo.et,3,2,'COMMA')}">
                </span> €
         </li>
         <li>Total:
@@ -46,7 +46,7 @@
         <td th:utext="${orderDetailInfo.productName}"></td>
         <td th:utext="${orderDetailInfo.quanity}"></td>
         <td th:utext="${#numbers.formatDecimal(orderDetailInfo.price,3,2,'COMMA')}"></td>
-        <td th:utext="${#numbers.formatDecimal(orderDetailInfo.evat,3,2,'COMMA')}"></td>
+        <td th:utext="${#numbers.formatDecimal(orderDetailInfo.et,3,2,'COMMA')}"></td>
         <td th:utext="${#numbers.formatDecimal(orderDetailInfo.amount,3,2,'COMMA')}"></td>
     </tr>
 </table>

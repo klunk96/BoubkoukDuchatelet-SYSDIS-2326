@@ -41,7 +41,7 @@ public class OrderDetail implements Serializable {
     private double amount;
 
     @Column(name = "Amountevat", nullable = false)
-    private double evat;
+    private double et;
 
     public String getId() {
         return id;
@@ -89,9 +89,9 @@ public class OrderDetail implements Serializable {
         this.amount = amount;
     }
 
-    public double getEvat() { return evat; }
+    public double getEt() { return et; }
 
-    public void setEvat(double evat) {
-        this.evat = evat;
+    public void setEt(double et) {
+        this.et = et;
     }
 }

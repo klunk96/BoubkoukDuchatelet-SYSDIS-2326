@@ -9,7 +9,7 @@ public class OrderInfo {
     private Date orderDate;
     private int orderNum;
     private double amount;
-    private double evat;
+    private double et;
 
     private String customerName;
     private String customerAddress;
@@ -24,13 +24,13 @@ public class OrderInfo {
 
     // Using for Hibernate Query.
     public OrderInfo(String id, Date orderDate, int orderNum, //
-                     double amount,double evat, String customerName, String customerAddress, //
+                     double amount,double et, String customerName, String customerAddress, //
                      String customerEmail, String customerPhone) {
         this.id = id;
         this.orderDate = orderDate;
         this.orderNum = orderNum;
         this.amount = amount;
-        this.evat = evat;
+        this.et = et;
 
         this.customerName = customerName;
         this.customerAddress = customerAddress;
@@ -110,11 +110,11 @@ public class OrderInfo {
         this.details = details;
     }
 
-    public void setEvat(double evat) {
-        this.evat = evat;
+    public void setEt(double et) {
+        this.et = et;
     }
 
-    public double getEvat() {
-        return evat;
+    public double getEt() {
+        return et;
     }
 }

@@ -9,7 +9,7 @@ public class OrderDetailInfo {
     private int quanity;
     private double price;
     private double amount;
-    private double evat;
+    private double et;
 
     public OrderDetailInfo() {
 
@@ -17,14 +17,14 @@ public class OrderDetailInfo {
 
     // Using for JPA/Hibernate Query.
     public OrderDetailInfo(String id, String productCode, //
-                           String productName, int quanity, double price, double amount, double evat) {
+                           String productName, int quanity, double price, double amount, double et) {
         this.id = id;
         this.productCode = productCode;
         this.productName = productName;
         this.quanity = quanity;
         this.price = price;
         this.amount = amount;
-        this.evat = evat;
+        this.et = et;
     }
 
     public String getId() {
@@ -75,11 +75,11 @@ public class OrderDetailInfo {
         this.amount = amount;
     }
 
-    public double getEvat() {
-        return evat;
+    public double getEt() {
+        return et;
     }
 
-    public void setEvat(double evat) {
-        this.evat = evat;
+    public void setEt(double et) {
+        this.et = et;
     }
 }

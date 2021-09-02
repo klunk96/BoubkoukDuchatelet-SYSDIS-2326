@@ -56,7 +56,7 @@
             <th:block sec:authorize="hasAuthority('ROLE_MANAGER')">
                 <li>Sous-total-htva:
                     <span class="subtotal"
-                          th:utext="${#numbers.formatDecimal(cartLineInfo.evat,2,2,'COMMA')}">
+                          th:utext="${#numbers.formatDecimal(cartLineInfo.et,2,2,'COMMA')}">
                         </span> €
                 </li>
             </th:block>
