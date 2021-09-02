@@ -27,13 +27,12 @@ public class OrderInfo {
     public OrderInfo(String id, Date orderDate, int orderNum, //
                      double amount,double et, boolean delivery, String customerName, String customerAddress, //
                      String customerEmail, String customerPhone) {
+        this.amount=amount;
         this.id = id;
         this.orderDate = orderDate;
         this.orderNum = orderNum;
-        this.amount = amount;
         this.et = et;
         this.delivery = delivery;
-
         this.customerName = customerName;
         this.customerAddress = customerAddress;
         this.customerEmail = customerEmail;

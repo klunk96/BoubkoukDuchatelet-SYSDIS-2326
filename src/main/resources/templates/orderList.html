@@ -20,6 +20,7 @@
         <th>Email client</th>
         <th>Prix Total HTVA (€)</th>
         <th>Prix Total (€)</th>
+        <th>Livraison express</th>
         <th>Détails commande</th>
     </tr>
     <tr th:each="orderInfo : ${paginationResult.list}">
@@ -30,6 +31,7 @@
         <td th:utext="${orderInfo.customerEmail}"></td>
         <td style="color:red;" th:utext="${#numbers.formatDecimal(orderInfo.et,3,2,'COMMA')}">
         <td style="color:red;" th:utext="${#numbers.formatDecimal(orderInfo.amount,3,2,'COMMA')}">
+        <input type="checkbox"  name="delivery" th:checked="${orderInfo.delivery}"/>
         </td>
         <td><a th:href="@{|/admin/order?orderId=${orderInfo.id}|}">Détails</a></td>
     </tr>

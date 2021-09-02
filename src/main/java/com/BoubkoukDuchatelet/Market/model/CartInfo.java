@@ -107,6 +107,13 @@ public class CartInfo {
         for (CartLineInfo line : this.cartLines) {
             total += line.getAmount();
         }
+        if(delivery==true)
+        {
+            total=total+10;
+        }else
+        {
+            total=total+5;
+        }
         return total;
     }
 
@@ -114,6 +121,13 @@ public class CartInfo {
         double et = 0;
         for (CartLineInfo line : this.cartLines) {
             et += line.getEt();
+        }
+        if(delivery==true)
+        {
+            et=et+10*1.21;
+        }else
+        {
+            et=et+5*1.21;
         }
         return et;
     }
