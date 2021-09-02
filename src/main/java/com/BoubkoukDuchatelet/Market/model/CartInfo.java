@@ -11,6 +11,8 @@ public class CartInfo {
 
     private final List<CartLineInfo> cartLines = new ArrayList<CartLineInfo>();
 
+    private boolean delivery = false;
+
     public CartInfo() {
 
     }
@@ -126,4 +128,17 @@ public class CartInfo {
 
     }
 
+    public void updateDelivery(CartInfo cartForm) {
+        if (cartForm != null) {
+            this.setDelivery(cartForm.isDelivery());
+            }
+    }
+
+    public void setDelivery(boolean delivery) {
+        this.delivery = delivery;
+    }
+
+    public boolean isDelivery() {
+        return delivery;
+    }
 }
