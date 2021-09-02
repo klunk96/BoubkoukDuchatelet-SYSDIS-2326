@@ -17,7 +17,7 @@ public class ProductInfo {
         this.name = product.getName();
         this.price = product.getPrice();
         this.vat = product.getVat();
-        this.etPrice = 69;
+        this.etPrice = price/(((double)vat/100)+1);
     }
 
     // Using in JPA/Hibernate query
@@ -25,7 +25,7 @@ public class ProductInfo {
         this.code = code;
         this.name = name;
         this.price = price;
-        this.etPrice = 69;
+        this.etPrice = price/(((double)vat/100)+1);
     }
 
     public ProductInfo(String code, String name, double price, int vat) {
@@ -33,7 +33,7 @@ public class ProductInfo {
         this.name = name;
         this.price = price;
         this.vat = vat;
-        this.etPrice = 69;
+        this.etPrice = price/(((double)vat/100)+1);
     }
 
     public String getCode() {

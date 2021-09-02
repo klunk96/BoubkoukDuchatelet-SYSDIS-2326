@@ -24,7 +24,7 @@ public class ProductForm {
         this.name = product.getName();
         this.price = product.getPrice();
         this.vat = product.getVat();
-        this.etPrice = 69;;
+        this.etPrice = product.getPrice() / ((product.getVat()/ 100));
     }
 
     public String getCode() { return code; }
