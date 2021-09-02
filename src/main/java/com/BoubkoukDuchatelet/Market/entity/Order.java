@@ -28,7 +28,7 @@ public class Order implements Serializable {
     private double amount;
 
     @Column(name = "Amountevat", nullable = false)
-    private double amountevat;
+    private double evat;
 
     @Column(name = "Customer_Name", length = 255, nullable = false)
     private String customerName;
@@ -74,10 +74,10 @@ public class Order implements Serializable {
         this.amount = amount;
     }
 
-    public double getAmountEvat() { return amountevat; }
+    public double getEvat() { return evat; }
 
-    public void setAmountEvat(double amountevat) {
-        this.amountevat = amountevat;
+    public void setEvat(double evat) {
+        this.evat = evat;
     }
 
     public String getCustomerName() {

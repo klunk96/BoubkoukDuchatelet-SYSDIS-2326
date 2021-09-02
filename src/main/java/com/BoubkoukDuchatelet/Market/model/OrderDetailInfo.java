@@ -17,13 +17,14 @@ public class OrderDetailInfo {
 
     // Using for JPA/Hibernate Query.
     public OrderDetailInfo(String id, String productCode, //
-                           String productName, int quanity, double price, double amount) {
+                           String productName, int quanity, double price, double amount, double evat) {
         this.id = id;
         this.productCode = productCode;
         this.productName = productName;
         this.quanity = quanity;
         this.price = price;
         this.amount = amount;
+        this.evat = evat;
     }
 
     public String getId() {
