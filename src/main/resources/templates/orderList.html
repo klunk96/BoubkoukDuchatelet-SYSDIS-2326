@@ -30,9 +30,8 @@
         <td th:utext="${orderInfo.customerAddress}"></td>
         <td th:utext="${orderInfo.customerEmail}"></td>
         <td style="color:red;" th:utext="${#numbers.formatDecimal(orderInfo.et,3,2,'COMMA')}">
-        <td style="color:red;" th:utext="${#numbers.formatDecimal(orderInfo.amount,3,2,'COMMA')}">
-        <input type="checkbox"  name="delivery" th:checked="${orderInfo.delivery}"/>
-        </td>
+        <td style="color:red;" th:utext="${#numbers.formatDecimal(orderInfo.amount,3,2,'COMMA')}"></td>
+        <td><input type="checkbox" disabled="disabled" th:checked="${orderInfo.delivery}"/></td>
         <td><a th:href="@{|/admin/order?orderId=${orderInfo.id}|}">Détails</a></td>
     </tr>
 </table>
